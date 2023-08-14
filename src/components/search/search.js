@@ -16,7 +16,7 @@ const Search = ({ onSearchChange }) => {
     // se trouve dans leur codesandboxsur l'utilisation de la loadOptions https://codesandbox.io/s/o75rno2w65?file=/src/loadOptions.ts
     const loadOptions = async (inputValue) => {
         const response = await fetch(
-            `${GeoDBCitiesUrl}/cities?namePrefix=${inputValue}`,
+            `${GeoDBCitiesUrl}/cities?namePrefix=${inputValue}&languageCode=fr`,
             GeoDBCitiesOptions
         )
         const countriesInformation = await response.json()

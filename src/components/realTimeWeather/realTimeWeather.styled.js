@@ -13,7 +13,7 @@ export const Weather = styled.div`
 export const Flex = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: ${props => props.alignitemprop};
+  align-items: ${props => props.$alignitemprop};
 
   .weather-icon {
   width: 100px;
@@ -39,10 +39,10 @@ export const Flex = styled.div`
 `
 
 export const TopBottomParagraph = styled.p`
-  font-weight: ${props => props.fontweightprop};
-  font-size: ${props => props.fontsizeprop};
-  line-height: ${props => props.lineheightprop};
-  margin: ${props => props.marginprop};
-  letter-spacing: ${props => props.linespacingprop};
-  width: ${props => props.widthProp};
+  font-weight: ${props => props.$fontweightprop};
+  font-size: ${props => props.$fontsizeprop};
+  line-height: ${props => props.$lineheightprop};
+  margin: ${props => props.$marginprop};
+  letter-spacing: ${props => props.$linespacingprop};
+  width: ${props => props.$widthProp};
 `

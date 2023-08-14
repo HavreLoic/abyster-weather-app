@@ -6,13 +6,13 @@ const RealTimeWeather = ({ data }) => {
     console.log(data);
     return (
         <Weather>
-            <Flex alignitemprop="center">
+            <Flex $alignitemprop="center">
                 <div>
-                    <TopBottomParagraph fontweightprop="600" fontsizeprop="16px" lineheightprop="1" linespacingprop="1px" marginprop="0">
+                    <TopBottomParagraph $fontweightprop="600" $fontsizeprop="1em" $lineheightprop="1" $linespacingprop="1px" $marginprop="0">
                         {data.city}
                     </TopBottomParagraph>
 
-                    <TopBottomParagraph fontweightprop="400" fontsizeprop="14px" lineheightprop="1" marginprop="0">
+                    <TopBottomParagraph $fontweightprop="400" $fontsizeprop="0.875em" $lineheightprop="1" $marginprop="0">
                         {data.weather[0].description}
                     </TopBottomParagraph>
                 </div>
@@ -24,9 +24,9 @@ const RealTimeWeather = ({ data }) => {
 
             </Flex>
 
-            <Flex alignitemprop="center">
+            <Flex $alignitemprop="center">
 
-                <TopBottomParagraph fontweightprop="600" fontsizeprop="70px" lineheightprop="1" linespacingprop="-5px" marginprop="10px 0" widthprop="auto">
+                <TopBottomParagraph $fontweightprop="600" $fontsizeprop="4.375em" $lineheightprop="1" $linespacingprop="-5px" $marginprop="10px 0" $widthprop="auto">
                     {Math.round(data.main.temp)}°C
                 </TopBottomParagraph>
 

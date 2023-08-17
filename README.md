@@ -17,3 +17,18 @@ Application météo Reactjs construite avec l'API OpenWeatherMap montrant les do
 ### prévisions quotidiennes
 
 ![prévisions quotidiennes](public/icons/daily.png)
+
+## Comment utiliser
+
+1. Cloner ou télécharger le repo
+
+2. Exécuter **npm start ou npm run dev**:
+   Exécute l'application en mode développement.
+   Ouvrez http://localhost:3000 pour l'afficher dans le navigateur.
+
+La page se rechargera si vous apportez des modifications.
+Vous verrez également toutes les erreurs dans la console.
+
+## Commande utile
+
+**npm test** pour Lance le testeur en mode watch mode.

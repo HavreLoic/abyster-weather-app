@@ -22,7 +22,7 @@ Application météo Reactjs construite avec l'API OpenWeatherMap montrant les do
 
 1. Cloner ou télécharger le repo
 
-2. Exécuter **npm start ou npm run dev**:
+2. **npm start ou npm run dev**:
    Exécute l'application en mode développement.
    Ouvrez http://localhost:3000 pour l'afficher dans le navigateur.
 

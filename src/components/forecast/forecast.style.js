@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Title = styled.label`
   font-size: 1.4375em;
   font-weight: 700;
+  display: flex;
+  justify-content: center;
+  margin: 1.2rem;
 `
 
 export const DailyItem = styled.div`

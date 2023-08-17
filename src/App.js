@@ -4,13 +4,14 @@ import Search from './components/search/search';
 import RealTimeWeather from './components/realTimeWeather/realTimeWeather';
 import Forecast from './components/forecast/forecast';
 
+export const openWeatherApiURL = "https://api.openweathermap.org/data/2.5";
+
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
 
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split(" ");
-    const openWeatherApiURL = "https://api.openweathermap.org/data/2.5";
 
     const fetchCurrentWeather = fetch(`${openWeatherApiURL}/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPEN_WEATHER_KEY}&units=metric&lang=fr`)
 

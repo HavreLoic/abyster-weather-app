@@ -3,7 +3,6 @@ import { Weather, Flex, TopBottomParagraph } from './realTimeWeather.styled'
 
 
 const RealTimeWeather = ({ data }) => {
-    console.log(data);
     return (
         <Weather>
             <Flex $alignitemprop="center">

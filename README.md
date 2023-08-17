@@ -4,16 +4,16 @@ Application météo Reactjs construite avec l'API OpenWeatherMap montrant les do
 
 ### application entière
 
-[application entière](public/icons/whole-app-plus-additional-details.png)
+![application entière](public/icons/whole-app-plus-additional-details.png)
 
 ### champ de recherche avec fonction de saisie semi-automatique
 
-[champ de recherche](public/icons/search-field.png)
+![champ de recherche](public/icons/search-field.png)
 
 ### météo actuelle
 
-[météo actuelle](public/icons/current-weather.png)
+![météo actuelle](public/icons/current-weather.png)
 
 ### prévisions quotidiennes
 
-[prévisions quotidiennes](public/icons/daily.png)
+![prévisions quotidiennes](public/icons/daily.png)

@@ -1,33 +1,45 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { AsyncPaginate } from 'react-select-async-paginate'
 import { GeoDBCitiesUrl } from '../../apiSetups'
 import { GeoDBCitiesOptions } from '../../apiSetups'
 
 const Search = ({ onSearchChange }) => {
     const [search, setSearch] = useState(null)
+    const [inputValue, setInputValue] = useState(null)
+    const [option, setOption] = useState({})
 
     const handleOnChange = (searchData) => {
         setSearch(searchData)
         onSearchChange(searchData)
     }
 
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch(
+                `${GeoDBCitiesUrl}/cities?namePrefix=${inputValue}&languageCode=fr`,
+                GeoDBCitiesOptions
+            )
+            const countriesInformation = await response.json()
+            console.log(countriesInformation);
+            setOption({
+                options: countriesInformation.data.map((city) => {
+                    return {
+                        value: `${city.latitude} ${city.longitude}`,
+                        label: `${city.name}, ${city.countryCode}`,
+                    }
+                })
+            })
+        }
+        fetchData()
+    }, [inputValue])
+
+
     // Valeur du prop loadOptions à passer dans le composant AsyncPaginate. 
     // L'implémentation de cette fonction fournie par la doc officielle sur le npm montrant comment l'utiliser 
     // se trouve dans leur codesandboxsur l'utilisation de la loadOptions https://codesandbox.io/s/o75rno2w65?file=/src/loadOptions.ts
-    const loadOptions = async (inputValue) => {
-        const response = await fetch(
-            `${GeoDBCitiesUrl}/cities?namePrefix=${inputValue}&languageCode=fr`,
-            GeoDBCitiesOptions
-        )
-        const countriesInformation = await response.json()
-        return {
-            options: countriesInformation.data.map((city) => {
-                return {
-                    value: `${city.latitude} ${city.longitude}`,
-                    label: `${city.name}, ${city.countryCode}`,
-                }
-            }),
-        }
+    const loadOptions = (inputValue) => {
+        setInputValue(inputValue)
+        return option
     };
 
     return (
@@ -37,7 +49,7 @@ const Search = ({ onSearchChange }) => {
             onChange={handleOnChange}
             placeholder="Rechercher la ville"
             loadOptions={loadOptions}
-            debounceTimeout={600}
+            debounceTimeout={1000}
         />
     )
 }

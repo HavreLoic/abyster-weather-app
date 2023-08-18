@@ -20,15 +20,7 @@ const Search = ({ onSearchChange }) => {
                 GeoDBCitiesOptions
             )
             const countriesInformation = await response.json()
-            console.log(countriesInformation);
-            setOption({
-                options: countriesInformation.data.map((city) => {
-                    return {
-                        value: `${city.latitude} ${city.longitude}`,
-                        label: `${city.name}, ${city.countryCode}`,
-                    }
-                })
-            })
+            setOption(countriesInformation)
         }
         fetchData()
     }, [inputValue])
@@ -39,8 +31,17 @@ const Search = ({ onSearchChange }) => {
     // se trouve dans leur codesandboxsur l'utilisation de la loadOptions https://codesandbox.io/s/o75rno2w65?file=/src/loadOptions.ts
     const loadOptions = (inputValue) => {
         setInputValue(inputValue)
-        return option
+        return {
+            options: option.data?.map((city) => {
+                return {
+                    value: `${city.latitude} ${city.longitude}`,
+                    label: `${city.name}, ${city.countryCode}`,
+                }
+            })
+        }
     };
+
+    console.log(loadOptions);
 
     return (
         // Documentation sur l'utilisation du composant AsyncPaginate et les options supplémentaires https://www.npmjs.com/package/react-select-async-paginate
